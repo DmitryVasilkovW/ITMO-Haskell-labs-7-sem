@@ -1,7 +1,9 @@
 {-# LANGUAGE TypeOperators #-}
 
 module HW0.T1
-  ( flipIso
+  ( type (<->)
+  , Iso
+  , flipIso
   , runIso
   , distrib
   , assocPair
