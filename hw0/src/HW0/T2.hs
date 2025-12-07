@@ -5,7 +5,7 @@ import Data.Void (Void)
 type Not a = a -> Void
 
 doubleNeg :: a -> Not (Not a)
-doubleNeg x = \f -> f x
+doubleNeg x = \neg -> neg x
 
 reduceTripleNeg :: Not (Not (Not a)) -> Not a
-reduceTripleNeg tripleNeg = \a -> tripleNeg (\doubleNeg -> doubleNeg a)
+reduceTripleNeg tripleNeg = \value -> tripleNeg (\proof -> proof value)

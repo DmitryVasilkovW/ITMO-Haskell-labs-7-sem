@@ -5,19 +5,19 @@ import Numeric.Natural (Natural)
 type Nat a = (a -> a) -> a -> a
 
 nz :: Nat a
-nz = \f x -> x
+nz = \successor zero -> zero
 
 ns :: Nat a -> Nat a
-ns n = \f x -> f (n f x)
+ns number = \successor zero -> successor (number successor zero)
 
 nplus :: Nat a -> Nat a -> Nat a
-nplus a b = \f x -> a f (b f x)
+nplus a b = \successor zero -> a successor (b successor zero)
 
 nmult :: Nat a -> Nat a -> Nat a
-nmult a b = \f x -> a (b f) x
+nmult a b = \successor zero -> a (b successor) zero
 
 nFromNatural :: Natural -> Nat a
-nFromNatural n = \f x -> iterate f x !! fromIntegral n
+nFromNatural natural = \successor zero -> iterate successor zero !! fromIntegral natural
 
 nToNum :: Num a => Nat a -> a
-nToNum n = n (+1) 0
+nToNum number = number (+1) 0
