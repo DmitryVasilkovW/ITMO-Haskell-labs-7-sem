@@ -22,7 +22,7 @@ map' f = fix $ \step list ->
 fib :: Natural -> Natural
 fib n = go 0 1 n
   where
-    go current next 0 = current
+    go current _ 0 = current
     go current next remaining = go next (current + next) (remaining - 1)
 
 fac :: Natural -> Natural
