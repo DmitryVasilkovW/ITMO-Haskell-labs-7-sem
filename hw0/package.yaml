@@ -1,6 +1,6 @@
-name:                hw1
+name:                hw0
 version:             0.1.0.0
-github:              "githubuser/hw1"
+github:              "githubuser/hw0"
 license:             BSD3
 author:              "Author name here"
 maintainer:          "example@example.com"
@@ -14,7 +14,7 @@ copyright:           "2023 Author name here"
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/hw1#readme>
+description:         Please see the README on GitHub at <https://github.com/githubuser/hw0#readme>
 
 dependencies:
 - base >= 4.7 && < 5
@@ -35,7 +35,7 @@ library:
   source-dirs: src
 
 executables:
-  hw1-exe:
+  hw0-exe:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -43,10 +43,10 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - hw1
+    - hw0
 
 tests:
-  hw1-test:
+  hw0-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
@@ -54,4 +54,4 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - hw1
+    - hw0
