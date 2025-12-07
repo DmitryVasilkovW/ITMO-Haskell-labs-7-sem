@@ -2,7 +2,6 @@
 
 module HW0.T1
   ( type (<->)
-  , Iso
   , flipIso
   , runIso
   , distrib
