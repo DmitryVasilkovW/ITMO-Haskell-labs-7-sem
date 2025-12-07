@@ -1,12 +1,17 @@
 {-# LANGUAGE TypeApplications #-}
 
-module HW0.T4 where
+module HW0.T4
+  ( repeat'
+  , map'
+  , fib
+  , fac
+  ) where
 
 import Data.Function (fix)
 import Numeric.Natural (Natural)
 
 repeat' :: a -> [a]
-repeat' = fix . (:) 
+repeat' = fix . (:)
 
 map' :: (a -> b) -> [a] -> [b]
 map' f = fix $ \step list ->

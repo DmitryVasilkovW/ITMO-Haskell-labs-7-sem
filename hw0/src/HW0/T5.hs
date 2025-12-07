@@ -1,11 +1,19 @@
-module HW0.T5 where
+module HW0.T5
+  ( Nat
+  , nz
+  , ns
+  , nplus
+  , nmult
+  , nFromNatural
+  , nToNum
+  ) where
 
 import Numeric.Natural (Natural)
 
 type Nat a = (a -> a) -> a -> a
 
 nz :: Nat a
-nz = \successor zero -> zero
+nz = \_ zero -> zero
 
 ns :: Nat a -> Nat a
 ns number = \successor zero -> successor (number successor zero)

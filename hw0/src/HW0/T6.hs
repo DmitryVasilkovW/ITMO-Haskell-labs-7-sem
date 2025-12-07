@@ -1,11 +1,18 @@
-module HW0.T6 where
+module HW0.T6
+  ( distrib
+  , a
+  , b
+  , c
+  , a_whnf
+  , b_whnf
+  , c_whnf
+  ) where
 
 import Data.Char (isSpace)
 
 distrib :: Either a (b, c) -> (Either a b, Either a c)
-distrib (Left a) = (Left a, Left a)
-distrib (Right (b, c)) = (Right b, Right c)
-
+distrib (Left x) = (Left x, Left x)
+distrib (Right (y, z)) = (Right y, Right z)
 
 a :: (Either [Char] b, Either [Char] c)
 a = distrib (Left ("AB" ++ "CD" ++ "EF"))
