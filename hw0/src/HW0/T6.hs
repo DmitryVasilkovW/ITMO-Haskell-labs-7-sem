@@ -21,7 +21,7 @@ b :: [Bool]
 b = map isSpace "Hello, World"
 
 c :: String
-c = if 1 > 0 || error "X" then "Y" else "Z"
+c = if (1 :: Int) > 0 || error "X" then "Y" else "Z"
 
 a_whnf :: Either [Char] b
 a_whnf = Left ("AB" ++ "CD" ++ "EF")
