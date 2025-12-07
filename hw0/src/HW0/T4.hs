@@ -20,11 +20,10 @@ map' f = fix $ \step list ->
     (x:xs) -> f x : step xs
 
 fib :: Natural -> Natural
-fib = fix $ \next number ->
- case number of
-    0 -> 0
-    1 -> 1
-    _ -> next (number - 1) + next (number - 2)
+fib n = go 0 1 n
+  where
+    go current next 0 = current
+    go current next remaining = go next (current + next) (remaining - 1)
 
 fac :: Natural -> Natural
 fac = fix $ \recurse n ->
